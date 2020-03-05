@@ -1,6 +1,5 @@
 package com.mikhailovskii.artest
 
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             val anchor = hitResult.createAnchor()
 
             ModelRenderable.builder()
-                .setSource(this, Uri.parse("duck.sfb"))
+                .setSource(this, R.raw.duck)
                 .build()
                 .thenAccept { modelRenderable -> addModelToScene(anchor, modelRenderable) }
                 .exceptionally { throwable ->
